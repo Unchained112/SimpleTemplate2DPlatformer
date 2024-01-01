@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://caj8w2boox7tt"]
+
+[ext_resource type="Texture2D" uid="uid://udv1nypulskq" path="res://assets/graphics/dark-knight/spritesheets/dark-knight-idle.png" id="1_ingws"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgmh1"]
+height = 50.0
+
+[sub_resource type="Animation" id="Animation_cck0c"]
+resource_name = "idle"
+length = 0.3
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_057ds"]
+_data = {
+"idle": SubResource("Animation_cck0c")
+}
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jluvm"]
+graph_offset = Vector2(-185, -80)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -96)
+texture = ExtResource("1_ingws")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -26)
+shape = SubResource("CapsuleShape2D_bgmh1")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_057ds")
+}
+tree_root = SubResource("AnimationNodeStateMachine_jluvm")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_057ds")
+}
