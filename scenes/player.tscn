@@ -1,28 +1,88 @@
-[gd_scene load_steps=6 format=3 uid="uid://caj8w2boox7tt"]
+[gd_scene load_steps=11 format=3 uid="uid://caj8w2boox7tt"]
 
 [ext_resource type="Texture2D" uid="uid://udv1nypulskq" path="res://assets/graphics/dark-knight/spritesheets/dark-knight-idle.png" id="1_ingws"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_t3677"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgmh1"]
 height = 50.0
 
 [sub_resource type="Animation" id="Animation_cck0c"]
 resource_name = "idle"
-length = 0.3
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ingws")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_703gf"]
+length = 0.6
+loop_mode = 1
+step = 0.05
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_057ds"]
 _data = {
+"RESET": SubResource("Animation_703gf"),
 "idle": SubResource("Animation_cck0c")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uif4d"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_fv3ee"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_empqf"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jluvm"]
-graph_offset = Vector2(-185, -80)
+states/End/position = Vector2(691, 100)
+states/Idle/node = SubResource("AnimationNodeAnimation_uif4d")
+states/Idle/position = Vector2(315, 100)
+states/Move/node = SubResource("AnimationNodeBlendSpace1D_fv3ee")
+states/Move/position = Vector2(331, 23)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_empqf")]
+graph_offset = Vector2(-52, -23)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_t3677")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, -96)
 texture = ExtResource("1_ingws")
 hframes = 2
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -26)
@@ -34,6 +94,7 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_jluvm")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Move/blend_position = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
