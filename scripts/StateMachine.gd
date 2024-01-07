@@ -20,9 +20,6 @@ func _physics_process(delta):
 		switch_states(current_state.next_state)
 	current_state.state_process(delta)
 
-func _input(event: InputEvent):
-	current_state.state_input(event)
-
 func switch_states(new_state: State):
 	if(current_state != null):
 		current_state.on_exit()
