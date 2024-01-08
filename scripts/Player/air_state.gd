@@ -3,15 +3,13 @@ extends State
 @export var ground_state: State
 @export var dash_scale: float = 2.0
 @export var air_scale: float = 0.8
-@export var double_jump_velocity: float = -300.0
+@export var double_jump_velocity: float = -420.0
 
 var can_double_jump: bool = true
 var direction: float = 0.0;
 
 func on_state_enter():
 	can_double_jump = true
-	#animation_tree.set("parameters/conditions/is_jump", false)
-	#animation_tree.set("parameters/conditions/is_fall", false)
 
 func state_process(_delta):
 	direction = Input.get_axis("move_left", "move_right")
