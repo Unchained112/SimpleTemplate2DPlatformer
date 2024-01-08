@@ -8,10 +8,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animation_tree: AnimationTree = $AnimationTree
 
 func _physics_process(delta):
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
 	# Handle sprite direction
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction > 0:
