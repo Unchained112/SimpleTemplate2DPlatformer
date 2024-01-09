@@ -16,8 +16,9 @@ func state_process(_delta):
 	character.velocity.x = character.speed * direction * air_scale
 	# Air dash
 	if anime_state_machine.get_current_node() == "AirDash":
+		# TODO: Fix dash animation without movement
+		# TODO: Fix dash with double jump
 		character.velocity.x *= dash_scale
-		character.velocity.y = 0.0
 
 	if(character.is_on_floor()):
 		anime_state_machine.travel("Land")

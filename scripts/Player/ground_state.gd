@@ -1,9 +1,10 @@
 extends State
 
-@export var jump_velocity: float = -500.0
+@export var jump_velocity: float = -420.0
 @export var dash_scale: float = 2.0
 @export var air_state: State
 @export var attack_state: State
+@export var heavy_attack_state: State
 
 var direction: float = 0.0;
 
@@ -29,6 +30,8 @@ func state_input(event: InputEvent):
 		jump()
 	if event.is_action_pressed("attack"):
 		attack()
+	if event.is_action_pressed("heavy-attack"):
+		heavy_attack()
 
 func dash():
 	anime_state_machine.travel("Dash")
@@ -41,6 +44,10 @@ func jump():
 func attack():
 	next_state = attack_state
 	anime_state_machine.travel("Attack-1")
+
+func heavy_attack():
+	next_state = heavy_attack_state
+	anime_state_machine.travel("Heavy-attack-1")
 
 func _on_animation_tree_animation_finished(_anim_name):
 	if anime_state_machine.get_current_node() == "Dash":
