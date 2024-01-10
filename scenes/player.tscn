@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://caj8w2boox7tt"]
+[gd_scene load_steps=95 format=3 uid="uid://caj8w2boox7tt"]
 
 [ext_resource type="Texture2D" uid="uid://udv1nypulskq" path="res://assets/graphics/dark-knight/spritesheets/dark-knight-idle.png" id="1_ingws"]
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_t3677"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://qkrhmieage0c" path="res://assets/graphics/dark-knight/spritesheets/dark-knight-air-combo-c.png" id="18_8m1fd"]
 [ext_resource type="Script" path="res://scripts/Player/attack_state.gd" id="19_ajioy"]
 [ext_resource type="Script" path="res://scripts/Player/heavy_attack_state.gd" id="20_mmsvg"]
+[ext_resource type="Script" path="res://scripts/Player/air_attack_state.gd" id="24_lj6v8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgmh1"]
 height = 50.0
@@ -90,6 +91,165 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(8, -96)]
+}
+
+[sub_resource type="Animation" id="Animation_x3sci"]
+resource_name = "air-attack-1"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_v53us")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -28), Vector2(-2, -28)]
+}
+
+[sub_resource type="Animation" id="Animation_d31oq"]
+resource_name = "air-attack-2"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_j6ia0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -28), Vector2(-2, -28)]
+}
+
+[sub_resource type="Animation" id="Animation_xilev"]
+resource_name = "air-attack-3"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_8m1fd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -28), Vector2(-2, -28)]
 }
 
 [sub_resource type="Animation" id="Animation_si6gj"]
@@ -844,165 +1004,6 @@ tracks/3/keys = {
 "values": [Vector2(5, -26), Vector2(5, -26)]
 }
 
-[sub_resource type="Animation" id="Animation_x3sci"]
-resource_name = "air-attack-1"
-length = 0.4
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("16_v53us")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2, -28), Vector2(-2, -28)]
-}
-
-[sub_resource type="Animation" id="Animation_d31oq"]
-resource_name = "air-attack-2"
-length = 0.4
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("17_j6ia0")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2, -28), Vector2(-2, -28)]
-}
-
-[sub_resource type="Animation" id="Animation_xilev"]
-resource_name = "air-attack-3"
-length = 0.35
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("18_8m1fd")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [7]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.35),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2, -28), Vector2(-2, -28)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_057ds"]
 _data = {
 "RESET": SubResource("Animation_703gf"),
@@ -1024,6 +1025,15 @@ _data = {
 "prepare-jump": SubResource("Animation_ibbsn"),
 "run": SubResource("Animation_mafhr")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hpmtj"]
+animation = &"air-attack-1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0r5hv"]
+animation = &"air-attack-2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_834t6"]
+animation = &"air-attack-3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wkf0l"]
 animation = &"dash"
@@ -1148,9 +1158,34 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j1yl5"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ghh3"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n11sc"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1823e"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bb7y7"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_khewm"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f3mi3"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ls4qj"]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jluvm"]
+states/Air-attack-1/node = SubResource("AnimationNodeAnimation_hpmtj")
+states/Air-attack-1/position = Vector2(407.627, -90)
+states/Air-attack-2/node = SubResource("AnimationNodeAnimation_0r5hv")
+states/Air-attack-2/position = Vector2(573, -90)
+states/Air-attack-3/node = SubResource("AnimationNodeAnimation_834t6")
+states/Air-attack-3/position = Vector2(733.627, -90)
 states/AirDash/node = SubResource("AnimationNodeAnimation_wkf0l")
-states/AirDash/position = Vector2(468.627, -78)
+states/AirDash/position = Vector2(257, -90)
 states/Attack-1/node = SubResource("AnimationNodeAnimation_yuy0v")
 states/Attack-1/position = Vector2(-19, 309)
 states/Attack-2/node = SubResource("AnimationNodeAnimation_tnwlv")
@@ -1175,10 +1210,10 @@ states/Land/position = Vector2(561, 122)
 states/Move/node = SubResource("AnimationNodeBlendSpace1D_401nt")
 states/Move/position = Vector2(272, 131)
 states/Prepare-jump/node = SubResource("AnimationNodeAnimation_gynf0")
-states/Prepare-jump/position = Vector2(272, 43)
+states/Prepare-jump/position = Vector2(257, 34)
 states/Start/position = Vector2(-89, 136)
-transitions = ["Prepare-jump", "Jump", SubResource("AnimationNodeStateMachineTransition_1m6no"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_ppnp0"), "Fall", "Land", SubResource("AnimationNodeStateMachineTransition_uw5vq"), "Start", "Move", SubResource("AnimationNodeStateMachineTransition_mpkgd"), "Move", "Dash", SubResource("AnimationNodeStateMachineTransition_asca4"), "Move", "Prepare-jump", SubResource("AnimationNodeStateMachineTransition_aiiow"), "Land", "Move", SubResource("AnimationNodeStateMachineTransition_yo25w"), "Dash", "Move", SubResource("AnimationNodeStateMachineTransition_e1ilj"), "Jump", "AirDash", SubResource("AnimationNodeStateMachineTransition_na1t3"), "Fall", "AirDash", SubResource("AnimationNodeStateMachineTransition_y1rpm"), "Move", "Fall", SubResource("AnimationNodeStateMachineTransition_hbsp7"), "Attack-1", "Attack-2", SubResource("AnimationNodeStateMachineTransition_nqis3"), "Attack-2", "Attack-3", SubResource("AnimationNodeStateMachineTransition_hpdsn"), "Attack-1", "Move", SubResource("AnimationNodeStateMachineTransition_2r6n2"), "Attack-2", "Move", SubResource("AnimationNodeStateMachineTransition_05nmw"), "Attack-3", "Move", SubResource("AnimationNodeStateMachineTransition_k6x3j"), "Move", "Attack-1", SubResource("AnimationNodeStateMachineTransition_pdwcs"), "Heavy-attack-1", "Heavy-attack-2", SubResource("AnimationNodeStateMachineTransition_vdt62"), "Heavy-attack-2", "Heavy-attack-3", SubResource("AnimationNodeStateMachineTransition_ffecj"), "Heavy-attack-1", "Move", SubResource("AnimationNodeStateMachineTransition_fciny"), "Heavy-attack-2", "Move", SubResource("AnimationNodeStateMachineTransition_6d73c"), "Heavy-attack-3", "Move", SubResource("AnimationNodeStateMachineTransition_71bsa"), "Move", "Heavy-attack-1", SubResource("AnimationNodeStateMachineTransition_j1yl5")]
-graph_offset = Vector2(-308.373, -114)
+transitions = ["Prepare-jump", "Jump", SubResource("AnimationNodeStateMachineTransition_1m6no"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_ppnp0"), "Fall", "Land", SubResource("AnimationNodeStateMachineTransition_uw5vq"), "Start", "Move", SubResource("AnimationNodeStateMachineTransition_mpkgd"), "Move", "Dash", SubResource("AnimationNodeStateMachineTransition_asca4"), "Move", "Prepare-jump", SubResource("AnimationNodeStateMachineTransition_aiiow"), "Land", "Move", SubResource("AnimationNodeStateMachineTransition_yo25w"), "Dash", "Move", SubResource("AnimationNodeStateMachineTransition_e1ilj"), "Jump", "AirDash", SubResource("AnimationNodeStateMachineTransition_na1t3"), "Fall", "AirDash", SubResource("AnimationNodeStateMachineTransition_y1rpm"), "Move", "Fall", SubResource("AnimationNodeStateMachineTransition_hbsp7"), "Attack-1", "Attack-2", SubResource("AnimationNodeStateMachineTransition_nqis3"), "Attack-2", "Attack-3", SubResource("AnimationNodeStateMachineTransition_hpdsn"), "Attack-1", "Move", SubResource("AnimationNodeStateMachineTransition_2r6n2"), "Attack-2", "Move", SubResource("AnimationNodeStateMachineTransition_05nmw"), "Attack-3", "Move", SubResource("AnimationNodeStateMachineTransition_k6x3j"), "Move", "Attack-1", SubResource("AnimationNodeStateMachineTransition_pdwcs"), "Heavy-attack-1", "Heavy-attack-2", SubResource("AnimationNodeStateMachineTransition_vdt62"), "Heavy-attack-2", "Heavy-attack-3", SubResource("AnimationNodeStateMachineTransition_ffecj"), "Heavy-attack-1", "Move", SubResource("AnimationNodeStateMachineTransition_fciny"), "Heavy-attack-2", "Move", SubResource("AnimationNodeStateMachineTransition_6d73c"), "Heavy-attack-3", "Move", SubResource("AnimationNodeStateMachineTransition_71bsa"), "Move", "Heavy-attack-1", SubResource("AnimationNodeStateMachineTransition_j1yl5"), "Air-attack-1", "Air-attack-2", SubResource("AnimationNodeStateMachineTransition_8ghh3"), "Air-attack-2", "Air-attack-3", SubResource("AnimationNodeStateMachineTransition_n11sc"), "Jump", "Air-attack-1", SubResource("AnimationNodeStateMachineTransition_1823e"), "Fall", "Air-attack-1", SubResource("AnimationNodeStateMachineTransition_bb7y7"), "Air-attack-1", "Fall", SubResource("AnimationNodeStateMachineTransition_khewm"), "Air-attack-2", "Fall", SubResource("AnimationNodeStateMachineTransition_f3mi3"), "Air-attack-3", "Fall", SubResource("AnimationNodeStateMachineTransition_ls4qj")]
+graph_offset = Vector2(-79.373, -173)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t3677")
@@ -1221,9 +1256,10 @@ air_state = NodePath("../Air")
 attack_state = NodePath("../Attack")
 heavy_attack_state = NodePath("../HeavyAttack")
 
-[node name="Air" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("ground_state")]
+[node name="Air" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("ground_state", "air_attack_state")]
 script = ExtResource("14_26nfk")
 ground_state = NodePath("../Ground")
+air_attack_state = NodePath("../AirAttack")
 
 [node name="Attack" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("ground_state", "heavy_attack_state")]
 script = ExtResource("19_ajioy")
@@ -1251,9 +1287,23 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[node name="AirAttack" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("air_state")]
+script = ExtResource("24_lj6v8")
+air_state = NodePath("../Air")
+
+[node name="AttackTimer" type="Timer" parent="PlayerStateMachine/AirAttack"]
+wait_time = 0.3
+one_shot = true
+
+[node name="MoveTimer" type="Timer" parent="PlayerStateMachine/AirAttack"]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="animation_finished" from="AnimationTree" to="PlayerStateMachine/Ground" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="PlayerStateMachine/Air" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="PlayerStateMachine/Attack" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="PlayerStateMachine/HeavyAttack" method="_on_animation_tree_animation_finished"]
+[connection signal="animation_finished" from="AnimationTree" to="PlayerStateMachine/AirAttack" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/Attack" method="_on_animation_tree_animation_started"]
 [connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/HeavyAttack" method="_on_animation_tree_animation_started"]
+[connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/AirAttack" method="_on_animation_tree_animation_started"]
