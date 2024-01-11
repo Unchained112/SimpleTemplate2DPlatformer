@@ -23,37 +23,19 @@ func state_process(_delta):
 		character.velocity.x = 0.0
 	character.velocity.y = 0.0
 
-func _on_animation_tree_animation_finished(_anim_name):
-	# TODO: organize the code
-	attack_return("Air-attack-", 1)
-	attack_return("Air-attack-", 2)
-	attack_return("Air-attack-", 3)
-	#if anime_state_machine.get_current_node() == "Air-attack-1":
-		#if attack_timer.is_stopped():
-			#next_state = air_state
-		#else:
-			#asnime_state_machine.travel("Air-attack-2")
-#
-	#if anime_state_machine.get_current_node() == "Air-attack-2":
-		#if attack_timer.is_stopped():
-			#next_state = air_state
-		#else:
-			#anime_state_machine.travel("Air-attack-3")
-#
-	#if anime_state_machine.get_current_node() == "Air-attack-3":
-		#if attack_timer.is_stopped():
-			#next_state = air_state
-		#else:
-			#anime_state_machine.travel("Air-attack-1")
-
 func attack_return(anim_name: String, num: int):
 	if anime_state_machine.get_current_node() == anim_name + str(num):
 		if attack_timer.is_stopped():
 			next_state = air_state
+			next_state.is_air_attack = true
 			anime_state_machine.travel("Fall")
 		else:
 			anime_state_machine.travel(anim_name + str((num%3) + 1))
-	print(self)
+
+func _on_animation_tree_animation_finished(_anim_name):
+	attack_return("Air-attack-", 1)
+	attack_return("Air-attack-", 2)
+	attack_return("Air-attack-", 3)
 
 func _on_animation_tree_animation_started(_anim_name):
 	move_timer.start()

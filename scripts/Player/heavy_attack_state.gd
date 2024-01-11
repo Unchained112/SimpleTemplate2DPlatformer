@@ -29,24 +29,17 @@ func attack():
 	next_state = attack_state
 	anime_state_machine.travel("Attack-1")
 
+func attack_return(anim_name: String, num: int):
+	if anime_state_machine.get_current_node() == anim_name + str(num):
+		if attack_timer.is_stopped():
+			next_state = ground_state
+		else:
+			anime_state_machine.travel(anim_name + str((num%3) + 1))
+
 func _on_animation_tree_animation_finished(_anim_name):
-	if anime_state_machine.get_current_node() == "Heavy-attack-1":
-		if attack_timer.is_stopped():
-			next_state = ground_state
-		else:
-			anime_state_machine.travel("Heavy-attack-2")
-
-	if anime_state_machine.get_current_node() == "Heavy-attack-2":
-		if attack_timer.is_stopped():
-			next_state = ground_state
-		else:
-			anime_state_machine.travel("Heavy-attack-3")
-
-	if anime_state_machine.get_current_node() == "Heavy-attack-3":
-		if attack_timer.is_stopped():
-			next_state = ground_state
-		else:
-			anime_state_machine.travel("Heavy-attack-1")
+	attack_return("Heavy-attack-", 1)
+	attack_return("Heavy-attack-", 2)
+	attack_return("Heavy-attack-", 3)
 
 func _on_animation_tree_animation_started(_anim_name):
 	move_timer.start()
