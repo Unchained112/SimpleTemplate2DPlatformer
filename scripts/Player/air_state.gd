@@ -12,9 +12,9 @@ var direction: float = 0.0;
 
 func on_state_enter():
 	# TODO: Fix jump after air attack
-	if not is_air_attack:
+	#if not is_air_attack:
 		can_double_jump = true
-	is_air_attack = false
+	#is_air_attack = false
 
 func state_process(_delta):
 	direction = Input.get_axis("move_left", "move_right")

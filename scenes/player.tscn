@@ -1213,7 +1213,7 @@ states/Prepare-jump/node = SubResource("AnimationNodeAnimation_gynf0")
 states/Prepare-jump/position = Vector2(257, 34)
 states/Start/position = Vector2(-89, 136)
 transitions = ["Prepare-jump", "Jump", SubResource("AnimationNodeStateMachineTransition_1m6no"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_ppnp0"), "Fall", "Land", SubResource("AnimationNodeStateMachineTransition_uw5vq"), "Start", "Move", SubResource("AnimationNodeStateMachineTransition_mpkgd"), "Move", "Dash", SubResource("AnimationNodeStateMachineTransition_asca4"), "Move", "Prepare-jump", SubResource("AnimationNodeStateMachineTransition_aiiow"), "Land", "Move", SubResource("AnimationNodeStateMachineTransition_yo25w"), "Dash", "Move", SubResource("AnimationNodeStateMachineTransition_e1ilj"), "Jump", "AirDash", SubResource("AnimationNodeStateMachineTransition_na1t3"), "Fall", "AirDash", SubResource("AnimationNodeStateMachineTransition_y1rpm"), "Move", "Fall", SubResource("AnimationNodeStateMachineTransition_hbsp7"), "Attack-1", "Attack-2", SubResource("AnimationNodeStateMachineTransition_nqis3"), "Attack-2", "Attack-3", SubResource("AnimationNodeStateMachineTransition_hpdsn"), "Attack-1", "Move", SubResource("AnimationNodeStateMachineTransition_2r6n2"), "Attack-2", "Move", SubResource("AnimationNodeStateMachineTransition_05nmw"), "Attack-3", "Move", SubResource("AnimationNodeStateMachineTransition_k6x3j"), "Move", "Attack-1", SubResource("AnimationNodeStateMachineTransition_pdwcs"), "Heavy-attack-1", "Heavy-attack-2", SubResource("AnimationNodeStateMachineTransition_vdt62"), "Heavy-attack-2", "Heavy-attack-3", SubResource("AnimationNodeStateMachineTransition_ffecj"), "Heavy-attack-1", "Move", SubResource("AnimationNodeStateMachineTransition_fciny"), "Heavy-attack-2", "Move", SubResource("AnimationNodeStateMachineTransition_6d73c"), "Heavy-attack-3", "Move", SubResource("AnimationNodeStateMachineTransition_71bsa"), "Move", "Heavy-attack-1", SubResource("AnimationNodeStateMachineTransition_j1yl5"), "Air-attack-1", "Air-attack-2", SubResource("AnimationNodeStateMachineTransition_8ghh3"), "Air-attack-2", "Air-attack-3", SubResource("AnimationNodeStateMachineTransition_n11sc"), "Jump", "Air-attack-1", SubResource("AnimationNodeStateMachineTransition_1823e"), "Fall", "Air-attack-1", SubResource("AnimationNodeStateMachineTransition_bb7y7"), "Air-attack-1", "Fall", SubResource("AnimationNodeStateMachineTransition_khewm"), "Air-attack-2", "Fall", SubResource("AnimationNodeStateMachineTransition_f3mi3"), "Air-attack-3", "Fall", SubResource("AnimationNodeStateMachineTransition_ls4qj")]
-graph_offset = Vector2(-79.373, -173)
+graph_offset = Vector2(10.627, -195)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t3677")
@@ -1292,7 +1292,7 @@ script = ExtResource("24_lj6v8")
 air_state = NodePath("../Air")
 
 [node name="AttackTimer" type="Timer" parent="PlayerStateMachine/AirAttack"]
-wait_time = 0.3
+wait_time = 0.2
 one_shot = true
 
 [node name="MoveTimer" type="Timer" parent="PlayerStateMachine/AirAttack"]
