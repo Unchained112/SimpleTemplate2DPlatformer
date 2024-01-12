@@ -1478,6 +1478,7 @@ one_shot = true
 
 [node name="AttackArea2D" type="Area2D" parent="."]
 visible = false
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
 position = Vector2(36, -29)
@@ -1486,6 +1487,7 @@ disabled = true
 
 [node name="HeavyAttackArea2D" type="Area2D" parent="."]
 visible = false
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeavyAttackArea2D"]
 position = Vector2(2, -33)
@@ -1494,6 +1496,7 @@ disabled = true
 
 [node name="AirAttackArea2D" type="Area2D" parent="."]
 visible = false
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AirAttackArea2D"]
 position = Vector2(30.5, -30.625)
@@ -1508,3 +1511,4 @@ disabled = true
 [connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/Attack" method="_on_animation_tree_animation_started"]
 [connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/HeavyAttack" method="_on_animation_tree_animation_started"]
 [connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/AirAttack" method="_on_animation_tree_animation_started"]
+[connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]

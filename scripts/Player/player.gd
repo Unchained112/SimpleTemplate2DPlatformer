@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed = 360.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var damage: int = 20
+var health: int = 100
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -18,3 +20,6 @@ func _physics_process(delta):
 		sprite.flip_h = true
 
 	move_and_slide()
+
+func _on_attack_area_2d_body_entered(body):
+	print("Attacking")
