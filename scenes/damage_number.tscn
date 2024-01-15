@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c85swsxpvk7pj"]
+
+[ext_resource type="Script" path="res://scripts/damage_number.gd" id="1_2fd7c"]
+
+[sub_resource type="Animation" id="Animation_wud5u"]
+resource_name = "show"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bw1s1"]
+_data = {
+"show": SubResource("Animation_wud5u")
+}
+
+[node name="DamageNumber" type="Node2D"]
+script = ExtResource("1_2fd7c")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PlaceHolder"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bw1s1")
+}

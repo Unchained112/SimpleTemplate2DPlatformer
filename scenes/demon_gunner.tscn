@@ -7,6 +7,7 @@
 size = Vector2(45.5, 47)
 
 [node name="DemonGunner" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_wc88t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

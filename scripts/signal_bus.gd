@@ -1,3 +1,3 @@
 extends Node
 
-signal health_changed(character: CharacterBody2D, amount: int)
+signal health_changed(node: Node, amount: int)

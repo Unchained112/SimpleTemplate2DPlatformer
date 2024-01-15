@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://biw1fa4vos5s"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_43wsu"]
+[ext_resource type="PackedScene" uid="uid://c85swsxpvk7pj" path="res://scenes/damage_number.tscn" id="2_odcb4"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_43wsu")
+damage_number = ExtResource("2_odcb4")
