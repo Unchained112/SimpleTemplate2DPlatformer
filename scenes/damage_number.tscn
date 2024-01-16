@@ -1,24 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://c85swsxpvk7pj"]
+[gd_scene load_steps=5 format=3 uid="uid://c85swsxpvk7pj"]
 
 [ext_resource type="Script" path="res://scripts/damage_number.gd" id="1_2fd7c"]
 
 [sub_resource type="Animation" id="Animation_wud5u"]
 resource_name = "show"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(12, -12), Vector2(18, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_hfgos"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bw1s1"]
 _data = {
+"RESET": SubResource("Animation_hfgos"),
 "show": SubResource("Animation_wud5u")
 }
 
-[node name="DamageNumber" type="Node2D"]
+[node name="DamageNumber" type="Node2D" node_paths=PackedStringArray("label")]
 script = ExtResource("1_2fd7c")
+label = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1.0
+offset_top = -46.0
+offset_right = 95.0
+offset_bottom = -23.0
 text = "PlaceHolder"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bw1s1")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
