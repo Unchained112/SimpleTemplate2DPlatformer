@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://dolfvqx04bbeu"]
+
+[ext_resource type="Texture2D" uid="uid://1ahvppx5sw18" path="res://assets/graphics/demon-gunner/spritesheets/demon-gunner-projectile.png" id="1_mknxl"]
+[ext_resource type="Texture2D" uid="uid://mbww5c0b4t2o" path="res://assets/graphics/demon-gunner/spritesheets/demon-gunner-projectile-explosion.png" id="2_ma4ek"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgial"]
+atlas = ExtResource("1_mknxl")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flejs"]
+atlas = ExtResource("1_mknxl")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgvtl"]
+atlas = ExtResource("1_mknxl")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75mk5"]
+atlas = ExtResource("2_ma4ek")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yf1e"]
+atlas = ExtResource("2_ma4ek")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr3ql"]
+atlas = ExtResource("2_ma4ek")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwv20"]
+atlas = ExtResource("2_ma4ek")
+region = Rect2(432, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0l43"]
+atlas = ExtResource("2_ma4ek")
+region = Rect2(576, 0, 144, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4d0fu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgial")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flejs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgvtl")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75mk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yf1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr3ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwv20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0l43")
+}],
+"loop": true,
+"name": &"Explosion",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie8yg"]
+size = Vector2(41, 14)
+
+[node name="GunnerBullet" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4d0fu")
+animation = &"Default"
+autoplay = "Default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 1)
+shape = SubResource("RectangleShape2D_ie8yg")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvsdfx4slxcjr"]
+
+[ext_resource type="Texture2D" uid="uid://bq1wdmpbmore" path="res://assets/graphics/demon-hound/spritesheets/demon-hound-idle.png" id="1_wvolo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4k1n2"]
+size = Vector2(46, 38)
+
+[node name="DemonHound" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -96)
+texture = ExtResource("1_wvolo")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -21)
+shape = SubResource("RectangleShape2D_4k1n2")
