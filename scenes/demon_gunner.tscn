@@ -300,7 +300,7 @@ _data = {
 "Shoot": SubResource("Animation_tijq8")
 }
 
-[node name="DemonGunner" type="CharacterBody2D"]
+[node name="DemonGunner" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 3
 script = ExtResource("1_wc88t")
 
