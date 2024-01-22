@@ -5,6 +5,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var damage: int = 20
 var health: int = 100
+var heavy_attack_damage: int = 30
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -33,5 +34,13 @@ func update_player_dir(direction: float):
 		air_attack_area.scale.x = -1
 
 func _on_attack_area_2d_body_entered(body):
+	print(body.name)
+	body.get_damage(damage)
+
+func _on_heavy_attack_area_2d_body_entered(body):
+	print(body.name)
+	body.get_damage(heavy_attack_damage)
+
+func _on_air_attack_area_2d_body_entered(body):
 	print(body.name)
 	body.get_damage(damage)

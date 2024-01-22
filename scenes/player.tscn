@@ -200,10 +200,10 @@ tracks/4/path = NodePath("AirAttackArea2D/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_d31oq"]
@@ -265,10 +265,10 @@ tracks/4/path = NodePath("AirAttackArea2D/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_xilev"]
@@ -330,10 +330,10 @@ tracks/4/path = NodePath("AirAttackArea2D/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.35),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_si6gj"]
@@ -407,15 +407,16 @@ tracks/5/path = NodePath("AttackArea2D/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_xeoqt"]
 resource_name = "attack-2"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -483,15 +484,16 @@ tracks/5/path = NodePath("AttackArea2D/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_iv24e"]
 resource_name = "attack-3"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -559,10 +561,10 @@ tracks/5/path = NodePath("AttackArea2D/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_mdkpo"]
@@ -770,10 +772,10 @@ tracks/4/path = NodePath("HeavyAttackArea2D/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_k5sio"]
@@ -835,10 +837,10 @@ tracks/4/path = NodePath("HeavyAttackArea2D/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_ly4ip"]
@@ -900,10 +902,10 @@ tracks/4/path = NodePath("HeavyAttackArea2D/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.65),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1362,7 +1364,7 @@ states/Attack-3/node = SubResource("AnimationNodeAnimation_ddxdf")
 states/Attack-3/position = Vector2(257, 309)
 states/Dash/node = SubResource("AnimationNodeAnimation_6ke8a")
 states/Dash/position = Vector2(15, 43)
-states/End/position = Vector2(836, 122)
+states/End/position = Vector2(835, 122)
 states/Fall/node = SubResource("AnimationNodeAnimation_hdri3")
 states/Fall/position = Vector2(561, 34)
 states/Heavy-attack-1/node = SubResource("AnimationNodeAnimation_5qdts")
@@ -1393,6 +1395,7 @@ size = Vector2(82, 64)
 size = Vector2(39, 58.75)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
 script = ExtResource("1_t3677")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -1477,7 +1480,8 @@ wait_time = 0.1
 one_shot = true
 
 [node name="AttackArea2D" type="Area2D" parent="."]
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
 position = Vector2(36, -29)
@@ -1485,7 +1489,8 @@ shape = SubResource("RectangleShape2D_dhdly")
 disabled = true
 
 [node name="HeavyAttackArea2D" type="Area2D" parent="."]
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeavyAttackArea2D"]
 position = Vector2(2, -33)
@@ -1493,7 +1498,8 @@ shape = SubResource("RectangleShape2D_oimss")
 disabled = true
 
 [node name="AirAttackArea2D" type="Area2D" parent="."]
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AirAttackArea2D"]
 position = Vector2(30.5, -30.625)
@@ -1509,3 +1515,5 @@ disabled = true
 [connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/HeavyAttack" method="_on_animation_tree_animation_started"]
 [connection signal="animation_started" from="AnimationTree" to="PlayerStateMachine/AirAttack" method="_on_animation_tree_animation_started"]
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
+[connection signal="body_entered" from="HeavyAttackArea2D" to="." method="_on_heavy_attack_area_2d_body_entered"]
+[connection signal="body_entered" from="AirAttackArea2D" to="." method="_on_air_attack_area_2d_body_entered"]

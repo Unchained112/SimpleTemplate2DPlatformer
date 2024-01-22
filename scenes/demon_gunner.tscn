@@ -301,7 +301,8 @@ _data = {
 }
 
 [node name="DemonGunner" type="CharacterBody2D" groups=["Enemy"]]
-collision_layer = 3
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_wc88t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
