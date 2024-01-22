@@ -35,6 +35,7 @@ func state_input(event: InputEvent):
 
 func dash():
 	anime_state_machine.travel("Dash")
+	character.is_dashing = true
 
 func jump():
 	character.velocity.y = jump_velocity
@@ -52,3 +53,4 @@ func heavy_attack():
 func _on_animation_tree_animation_finished(_anim_name):
 	if anime_state_machine.get_current_node() == "Dash":
 		anime_state_machine.travel("Move")
+		character.is_dashing = false

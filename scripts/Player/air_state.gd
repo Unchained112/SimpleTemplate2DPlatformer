@@ -35,6 +35,7 @@ func state_input(event: InputEvent):
 
 func dash():
 	anime_state_machine.travel("AirDash")
+	character.is_dashing = true
 
 func air_attack():
 	next_state = air_attack_state
@@ -52,3 +53,4 @@ func _on_animation_tree_animation_finished(anim_name):
 	if anime_state_machine.get_current_node() == "AirDash":
 		#character.velocity.y = 0.0
 		anime_state_machine.travel("Fall")
+		character.is_dashing = false

@@ -2016,6 +2016,18 @@ texture = ExtResource("1_8mls8")
 35:29/0 = 0
 35:29/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 35:29/0/physics_layer_0/angular_velocity = 0.0
+3:23/0 = 0
+3:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:23/0/physics_layer_0/angular_velocity = 0.0
+6:23/0 = 0
+6:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:23/0/physics_layer_0/angular_velocity = 0.0
+9:26/0 = 0
+9:26/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:26/0/physics_layer_0/angular_velocity = 0.0
+5:25/0 = 0
+5:25/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:25/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_bqf7u"]
 physics_layer_0/collision_layer = 1
