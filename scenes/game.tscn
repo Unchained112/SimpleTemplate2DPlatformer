@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4lgrptpqcw12"]
+[gd_scene load_steps=15 format=3 uid="uid://b4lgrptpqcw12"]
 
 [ext_resource type="Texture2D" uid="uid://0n0qs3ajwllc" path="res://assets/graphics/tilesheet/spritesheets/tilesheet.png" id="1_8mls8"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_vo8gn"]
+[ext_resource type="Texture2D" uid="uid://bir1uhvx5mrss" path="res://assets/graphics/Parallax Cave/1.png" id="2_678h4"]
 [ext_resource type="PackedScene" uid="uid://caj8w2boox7tt" path="res://scenes/player.tscn" id="2_osayt"]
 [ext_resource type="PackedScene" uid="uid://dho33oyer8qnr" path="res://scenes/demon_gunner.tscn" id="3_68gv0"]
+[ext_resource type="Texture2D" uid="uid://bjobc48ucvr7" path="res://assets/graphics/Parallax Cave/2.png" id="3_u6um3"]
 [ext_resource type="PackedScene" uid="uid://biw1fa4vos5s" path="res://scenes/ui.tscn" id="4_fd5mf"]
+[ext_resource type="Texture2D" uid="uid://dijijrlaj4pjc" path="res://assets/graphics/Parallax Cave/4.png" id="4_gq5tt"]
 [ext_resource type="PackedScene" uid="uid://bvsdfx4slxcjr" path="res://scenes/demon_hound.tscn" id="5_awdku"]
+[ext_resource type="Texture2D" uid="uid://b17bjlg20gdeo" path="res://assets/graphics/Parallax Cave/5.png" id="5_uqgtr"]
+[ext_resource type="Texture2D" uid="uid://dywucg6d1200f" path="res://assets/graphics/Parallax Cave/7.png" id="6_n2dry"]
+[ext_resource type="Texture2D" uid="uid://d1l4783fcyxey" path="res://assets/graphics/Parallax Cave/9.png" id="7_sx70p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkd5i"]
 texture = ExtResource("1_8mls8")
@@ -2035,6 +2041,38 @@ sources/0 = SubResource("TileSetAtlasSource_vkd5i")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_vo8gn")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("2_678h4")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("3_u6um3")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("4_gq5tt")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("5_uqgtr")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource("6_n2dry")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+texture = ExtResource("7_sx70p")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

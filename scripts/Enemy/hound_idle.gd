@@ -11,13 +11,17 @@ var face_left: bool = false
 
 func on_state_enter():
 	anime_state_machine.travel("Run")
+	walk_timer.start()
+
+func on_state_exit():
+	walk_timer.stop()
+	wait_timer.stop()
 
 func state_process(_delta):
 	if character.is_idle:
 		walk_around()
 	else:
-		# Change state
-		pass
+		next_state = active_state
 
 func walk_around():
 	if not walk_timer.is_stopped():

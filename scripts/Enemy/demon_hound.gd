@@ -15,6 +15,7 @@ var target: CharacterBody2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var bleeding_particle: GPUParticles2D = $BleedingParticle
 @onready var hit_shader_payer: AnimationPlayer = $Sprite2D/HitShaderPlayer
+@onready var trigger_area: Area2D = $TriggerArea2D
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -32,3 +33,9 @@ func get_damage(damage: int):
 
 func flip_face_dir(is_face_left: bool):
 	sprite.flip_h = is_face_left
+	trigger_area.scale.x *= -1
+
+func _on_trigger_area_2d_body_entered(body):
+	if body.is_in_group("Player"):
+		is_idle = false
+		register_target(body)
