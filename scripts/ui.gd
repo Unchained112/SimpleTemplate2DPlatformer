@@ -6,6 +6,7 @@ func _ready():
 	SignalBus.health_changed.connect(_on_health_changed)
 
 func _on_health_changed(node: Node, amount: int):
-	var damage_num = damage_number.instantiate()
-	damage_num.set_num(amount)
-	node.add_child(damage_num)
+	if node.is_in_group("Enemy"):
+		var damage_num = damage_number.instantiate()
+		damage_num.set_num(amount)
+		node.add_child(damage_num)

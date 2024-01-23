@@ -14,6 +14,7 @@ var target: CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var bleeding_particle: GPUParticles2D = $BleedingParticle
+@onready var hit_shader_payer: AnimationPlayer = $Sprite2D/HitShaderPlayer
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -27,3 +28,7 @@ func get_damage(damage: int):
 	print("Got attacked, damage: " + str(damage))
 	health -= damage
 	bleeding_particle.emitting = true
+	hit_shader_payer.play("GetDamage")
+
+func flip_face_dir(is_face_left: bool):
+	sprite.flip_h = is_face_left

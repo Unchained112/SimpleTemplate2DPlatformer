@@ -14,6 +14,7 @@ func _ready():
 	for state in get_children():
 		states.append(state)
 		state.setup(character, anime_state_machine, animation_tree)
+	switch_states(current_state)
 
 func _physics_process(delta):
 	if current_state.next_state != null:
