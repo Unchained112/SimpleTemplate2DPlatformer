@@ -2046,7 +2046,8 @@ script = ExtResource("1_vo8gn")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(593, 364)
-motion_mirroring = Vector2(1920, 2.08165e-12)
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2(0.67, 0.67)
@@ -2054,6 +2055,8 @@ texture = ExtResource("2_678h4")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(593, 364)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 scale = Vector2(0.67, 0.67)
@@ -2061,6 +2064,8 @@ texture = ExtResource("3_u6um3")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(593, 364)
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 scale = Vector2(0.67, 0.67)
@@ -2068,6 +2073,8 @@ texture = ExtResource("4_gq5tt")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(593, 364)
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 scale = Vector2(0.67, 0.67)
@@ -2075,6 +2082,8 @@ texture = ExtResource("5_uqgtr")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(593, 364)
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 scale = Vector2(0.67, 0.67)
@@ -2082,6 +2091,8 @@ texture = ExtResource("6_n2dry")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(593, 364)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 scale = Vector2(0.67, 0.67)

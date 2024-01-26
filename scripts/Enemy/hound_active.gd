@@ -3,6 +3,7 @@ extends State
 @export var run_speed: float = 200.0
 
 var face_dir: bool = false # false for right, true for left
+var relative_pos: float = 0.0
 
 func on_state_enter():
 	anime_state_machine.travel("Idle")
@@ -14,7 +15,7 @@ func state_process(_delta):
 	check_target()
 
 func check_target():
-	var relative_pos = character.target.position.x - character.position.x
+	relative_pos = character.target.position.x - character.position.x
 	if relative_pos > 0 and face_dir == true:
 		face_dir = false
 		character.flip_face_dir(face_dir)
@@ -23,12 +24,14 @@ func check_target():
 		character.flip_face_dir(face_dir)
 
 func bite():
-	pass
+	anime_state_machine.travel("Bite")
 
 func run_to_target():
-	pass
+	anime_state_machine.travel("Run")
 
 func jump_acttack():
 	pass
 
-
+func _on_animation_tree_animation_finished(anim_name):
+	if anim_name == "Bite":
+		anime_state_machine.travel("Idle")

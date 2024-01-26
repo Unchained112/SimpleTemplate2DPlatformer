@@ -401,6 +401,8 @@ one_shot = true
 [node name="Active" type="Node" parent="StateMachine"]
 script = ExtResource("8_430x4")
 
+[node name="Timer" type="Timer" parent="StateMachine/Active"]
+
 [node name="Hit" type="Node" parent="StateMachine"]
 script = ExtResource("9_gr0j8")
 
@@ -408,5 +410,6 @@ script = ExtResource("9_gr0j8")
 position = Vector2(1, -21)
 
 [connection signal="body_entered" from="TriggerArea2D" to="." method="_on_trigger_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationTree" to="StateMachine/Active" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="StateMachine/Idle/WalkTimer" to="StateMachine/Idle" method="_on_walk_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Idle/WaitTimer" to="StateMachine/Idle" method="_on_wait_timer_timeout"]
