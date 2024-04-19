@@ -61,6 +61,40 @@ size = Vector2(46, 38)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g77g"]
 size = Vector2(278.125, 95.5)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sh7ax"]
+animation = &"Bite"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pkvrh"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ssbfl"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h5e2u"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_03xoi"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_falac"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a6opm"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vamnp"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k7co6"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qg3uo"]
+states/Bite/node = SubResource("AnimationNodeAnimation_sh7ax")
+states/Bite/position = Vector2(544, 5)
+states/End/position = Vector2(726, 100)
+states/Idle/node = SubResource("AnimationNodeAnimation_pkvrh")
+states/Idle/position = Vector2(424, 100)
+states/Run/node = SubResource("AnimationNodeAnimation_ssbfl")
+states/Run/position = Vector2(311, 5)
+transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_h5e2u"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_03xoi"), "Idle", "Bite", SubResource("AnimationNodeStateMachineTransition_falac"), "Bite", "Idle", SubResource("AnimationNodeStateMachineTransition_a6opm"), "Run", "Bite", SubResource("AnimationNodeStateMachineTransition_vamnp"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k7co6")]
+graph_offset = Vector2(-24, -35)
+
 [sub_resource type="Animation" id="Animation_u6syy"]
 resource_name = "Bite"
 length = 0.9
@@ -307,40 +341,6 @@ _data = {
 "Run": SubResource("Animation_q76ds")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sh7ax"]
-animation = &"Bite"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pkvrh"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ssbfl"]
-animation = &"Run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h5e2u"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_03xoi"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_falac"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a6opm"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vamnp"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k7co6"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qg3uo"]
-states/Bite/node = SubResource("AnimationNodeAnimation_sh7ax")
-states/Bite/position = Vector2(544, 5)
-states/End/position = Vector2(726, 100)
-states/Idle/node = SubResource("AnimationNodeAnimation_pkvrh")
-states/Idle/position = Vector2(424, 100)
-states/Run/node = SubResource("AnimationNodeAnimation_ssbfl")
-states/Run/position = Vector2(311, 5)
-transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_h5e2u"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_03xoi"), "Idle", "Bite", SubResource("AnimationNodeStateMachineTransition_falac"), "Bite", "Idle", SubResource("AnimationNodeStateMachineTransition_a6opm"), "Run", "Bite", SubResource("AnimationNodeStateMachineTransition_vamnp"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k7co6")]
-graph_offset = Vector2(-24, -35)
-
 [node name="DemonHound" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_jp8kj")
@@ -369,9 +369,6 @@ position = Vector2(89.9375, -48.25)
 shape = SubResource("RectangleShape2D_0g77g")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_klf64")
-}
 tree_root = SubResource("AnimationNodeStateMachine_qg3uo")
 anim_player = NodePath("../AnimationPlayer")
 
