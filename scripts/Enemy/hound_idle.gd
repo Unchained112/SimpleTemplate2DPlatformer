@@ -44,4 +44,3 @@ func _on_wait_timer_timeout():
 	walk_timer.start()
 	filp_face_dir()
 	anime_state_machine.travel("Run")
-
